@@ -14,7 +14,7 @@ function Blog() {
 
       <div className="content content-2 content--empty">
         <p className="placeholder">Content</p>
-        
+
         <AddButton />
 
         <ChoseElement />

@@ -1,6 +1,6 @@
 function GridSelect({ gridType, setGridType }) {
   const changeGridTypeHandler = ({ target }) => setGridType(target.value);
-  
+
   return (
     <form className="grid-select">
       <h2 className="grid-select__header">Выберите сетку сайта</h2>

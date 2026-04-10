@@ -10,7 +10,7 @@ import LayoutContent from '../layout-content/layout-content';
 
 function App() {
   const [gridType, setGridType] = useState(GridType.Landing);
-  
+
   return (
     <div className="container">
       <h1 className="visually-hidden">Конструктор сайтов</h1>

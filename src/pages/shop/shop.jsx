@@ -22,7 +22,7 @@ function Shop() {
 
       <div className="content content-3 content--empty">
         <p className="placeholder">Content</p>
-        
+
         <AddButton />
 
         <ChoseElement />
