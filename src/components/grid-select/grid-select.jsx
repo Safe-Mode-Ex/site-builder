@@ -1,8 +1,18 @@
-function GridSelect() {
+function GridSelect({ gridType, setGridType }) {
+  const changeGridTypeHandler = ({ target }) => setGridType(target.value);
+  
   return (
     <form className="grid-select">
       <h2 className="grid-select__header">Выберите сетку сайта</h2>
-      <input className="grid-select__radio visually-hidden" type="radio" name="grid" id="grid-landing" checked />
+      <input
+        className="grid-select__radio visually-hidden"
+        type="radio"
+        name="grid"
+        id="grid-landing"
+        value="landing"
+        checked={gridType === 'landing'}
+        onChange={changeGridTypeHandler}
+      />
       <label htmlFor="grid-landing" className="grid-select__btn">
         <span className="grid-select__text">Лендинг</span>
         <svg className="grid-select__img" width="240" height="132" viewBox="0 0 240 132" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -11,7 +21,15 @@ function GridSelect() {
           <rect x="0.3" y="26.3" width="239.4" height="79.4" strokeWidth="0.6" strokeDasharray="5 5"/>
         </svg>
       </label>
-      <input className="grid-select__radio visually-hidden" type="radio" name="grid" id="grid-blog" />
+      <input
+        className="grid-select__radio visually-hidden"
+        type="radio"
+        name="grid"
+        id="grid-blog"
+        value="blog"
+        checked={gridType === 'blog'}
+        onChange={changeGridTypeHandler}
+      />
       <label htmlFor="grid-blog" className="grid-select__btn">
         <span className="grid-select__text">Блог</span>
         <svg className="grid-select__img" width="240" height="132" viewBox="0 0 240 132" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -21,7 +39,15 @@ function GridSelect() {
           <rect x="100.3" y="26.3" width="139.4" height="79.4" strokeWidth="0.6" strokeDasharray="5 5"/>
         </svg>
       </label>
-      <input className="grid-select__radio visually-hidden" type="radio" name="grid" id="grid-shop" />
+      <input
+        className="grid-select__radio visually-hidden"
+        type="radio"
+        name="grid"
+        id="grid-shop"
+        value="shop"
+        checked={gridType === 'shop'}
+        onChange={changeGridTypeHandler}
+      />
       <label htmlFor="grid-shop" className="grid-select__btn">
         <span className="grid-select__text">Магазин</span>
         <svg className="grid-select__img" width="240" height="132" viewBox="0 0 240 132" fill="none" xmlns="http://www.w3.org/2000/svg">

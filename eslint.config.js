@@ -36,7 +36,8 @@ export default defineConfig([
       'semi': ['error', 'always'],
       'react/jsx-indent': ['error', 2],
       'react/jsx-indent-props': ['error', 2],
-      'react/react-in-jsx-scope': 'off'
+      'react/react-in-jsx-scope': 'off',
+      'react/prop-types': 'off',
     },
   },
 ]);
