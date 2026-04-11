@@ -16,6 +16,7 @@ function ElementImg() {
           />
         </svg>
       </button>
+
       <div className="img-upload">
         <p>Загрузите изображение</p>
         <input

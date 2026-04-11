@@ -13,7 +13,12 @@ function Header() {
         (
           <div className="header__elements-wrapper">
             {elements.map((element, index) =>
-              <Element key={element + index} index={index} type={element} setElements={setElements} />)}
+              <Element
+                key={element + index}
+                index={index}
+                typeValue={element}
+                setElements={setElements}
+              />)}
           </div>
         ) :
           <p className="placeholder">Header</p>}

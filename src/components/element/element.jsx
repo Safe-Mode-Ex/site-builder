@@ -1,18 +1,15 @@
-import ElementH1 from '../element-h1/element-h1';
-import ElementH2 from '../element-h2/element-h2';
-import ElementH3 from '../element-h3/element-h3';
+import ElementTitle from '../element-title/element-title';
 import ElementImg from '../element-img/element-img';
-import ElementP from '../element-p/element-p';
+import ElementText from '../element-text/element-text';
 
 const elementMap = {
-  h1: ElementH1,
-  h2: ElementH2,
-  h3: ElementH3,
-  p: ElementP,
+  title: ElementTitle,
+  text: ElementText,
   img: ElementImg,
 };
 
-function Element({ type, index, setElements }) {
+function Element({ typeValue, index, setElements }) {
+  const [type, tagName] = typeValue.split(' ');
   const ElementComponent = elementMap[type];
 
   const deleteButtonHandler = (evt) => {
@@ -23,8 +20,8 @@ function Element({ type, index, setElements }) {
   };
 
   return (
-    <div className="element title" tabIndex="0">
-      <ElementComponent />
+    <div className={`element ${type}`} tabIndex="0">
+      <ElementComponent tagName={tagName} />
 
       <button type="button" className="delete-btn" onClick={deleteButtonHandler}>
         <span className="visually-hidden">Удалить элемент</span>
