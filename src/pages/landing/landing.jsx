@@ -1,14 +1,17 @@
+import { useState } from 'react';
 import AddButton from '../../components/add-button/add-button';
 import ChoseElement from '../../components/chose-element/chose-element';
 
 function Landing() {
+  const [isEditMode, setIsEditMode] = useState(false);
+
   return (
     <div className="content content-1 content--empty">
       <p className="placeholder">Content</p>
 
-      <AddButton />
+      <AddButton isEditMode={isEditMode} setIsEditMode={setIsEditMode} />
 
-      <ChoseElement />
+      {isEditMode && <ChoseElement setIsEditMode={setIsEditMode} />}
     </div>
   );
 }
