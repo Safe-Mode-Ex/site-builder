@@ -9,3 +9,9 @@ export const PlaceHolder = {
   Footer: 'Footer',
   Content: 'Content',
 };
+
+export const ContentCount = {
+  Landing: 1,
+  Blog: 2,
+  Shop: 3,
+};
