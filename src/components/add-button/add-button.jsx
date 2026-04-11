@@ -1,7 +1,7 @@
-function AddButton({ isEditMode, setIsEditMode }) {
+function AddButton({ setIsEditMode }) {
   const clickButtonHandler = (evt) => {
     evt.preventDefault();
-    setIsEditMode(!isEditMode);
+    setIsEditMode(isEditMode => !isEditMode);
   };
 
   return (
