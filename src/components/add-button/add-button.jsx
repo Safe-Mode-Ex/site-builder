@@ -1,6 +1,15 @@
-function AddButton() {
+function AddButton({ setIsEditMode }) {
+  const clickButtonHandler = (evt) => {
+    evt.preventDefault();
+    setIsEditMode(isEditMode => !isEditMode);
+  };
+
   return (
-    <button type="button" className="add-btn">
+    <button
+      type="button"
+      className="add-btn"
+      onClick={clickButtonHandler}
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="40"
