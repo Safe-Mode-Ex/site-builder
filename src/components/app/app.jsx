@@ -17,11 +17,7 @@ function App() {
 
       <GridSelect gridType={gridType} setGridType={setGridType} />
 
-      <div className={`layout layout--${gridType}`}>
-        <Header />
-        <LayoutContent gridType={gridType} />
-        <Footer />
-      </div>
+      <LayoutContent gridType={gridType} />
     </div>
   );
 }

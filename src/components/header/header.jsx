@@ -2,13 +2,17 @@ import { useState } from 'react';
 import AddButton from '../add-button/add-button';
 import ChoseElement from '../chose-element/chose-element';
 import Element from '../element/element';
+import classNames from 'classnames';
 
 function Header() {
   const [isEditMode, setIsEditMode] = useState(false);
   const [elements, setElements] = useState([]);
 
   return (
-    <header className="header header--empty">
+    <header className={classNames(
+      'header',
+      { 'header--empty': !elements.length }
+    )}>
       {elements.length ?
         (
           <div className="header__elements-wrapper">
