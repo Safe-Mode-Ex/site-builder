@@ -1,15 +1,15 @@
 import { useState } from 'react';
 import AddButton from '../../components/add-button/add-button';
 import ChoseElement from '../../components/chose-element/chose-element';
-import Header from '../../components/header/header';
-import Footer from '../../components/footer/footer';
+import EditableSection from '../../components/editable-section/editable-section';
+import { PlaceHolder } from '../../const';
 
 function Landing() {
   const [isEditMode, setIsEditMode] = useState(false);
 
   return (
     <div className="layout layout--landing">
-      <Header />
+      <EditableSection as="header" block="header" placeholder={PlaceHolder.Header} />
 
       <div className="content content-1 content--empty">
         <p className="placeholder">Content</p>
@@ -17,7 +17,7 @@ function Landing() {
         {isEditMode && <ChoseElement setIsEditMode={setIsEditMode} />}
       </div>
 
-      <Footer />
+      <EditableSection as="footer" block="footer" placeholder={PlaceHolder.Footer} />
     </div>
   );
 }

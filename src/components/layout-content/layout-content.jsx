@@ -2,8 +2,6 @@ import { GridType } from '../../const';
 import Blog from '../../pages/blog/blog';
 import Landing from '../../pages/landing/landing';
 import Shop from '../../pages/shop/shop';
-import Footer from '../footer/footer';
-import Header from '../header/header';
 
 const layoutCmpMap = {
   [GridType.Landing]: Landing,
