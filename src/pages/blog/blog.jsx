@@ -9,7 +9,7 @@ function Blog() {
 
   return (
     <div className="layout layout--blog">
-      <EditableSection as="header" block="header" placeholder={PlaceHolder.Header} />
+      <EditableSection as="header" classList="header" placeholder={PlaceHolder.Header} />
 
       <div className="content content-1 content--empty">
         <p className="placeholder">Content</p>
@@ -23,7 +23,7 @@ function Blog() {
         {isEditMode && <ChoseElement setIsEditMode={setIsEditMode} />}
       </div>
 
-      <EditableSection as="footer" block="footer" placeholder={PlaceHolder.Footer} />
+      <EditableSection as="footer" classList="footer" placeholder={PlaceHolder.Footer} />
     </div>
   );
 }

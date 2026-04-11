@@ -3,16 +3,17 @@ import classNames from 'classnames';
 import Edit from '../edit/edit';
 import ElementsList from '../elements-list/elements-list';
 
-function EditableSection({ as: Component = 'div', block, placeholder }) {
+function EditableSection({ as: Component = 'div', classList, placeholder }) {
   const [elements, setElements] = useState([]);
+  const baseClass = classList.split(' ')[0];
 
   return (
     <Component className={classNames(
-      block,
-      { [`${block}--empty`]: !elements.length }
+      classList,
+      { [`${baseClass}--empty`]: !elements.length }
     )}>
       {elements.length ? (
-        <div className={`${block}__elements-wrapper`}>
+        <div className={`${baseClass}__elements-wrapper`}>
           <ElementsList elements={elements} setElements={setElements} />
         </div>
       ) : (
