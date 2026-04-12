@@ -4,7 +4,7 @@ function ElementsList({ elements, setElements }) {
   return (
     elements.map((element, index) =>
       <Element
-        key={element + index}
+        key={Math.random()}
         index={index}
         typeValue={element}
         setElements={setElements}
