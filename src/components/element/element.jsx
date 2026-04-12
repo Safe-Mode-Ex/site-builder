@@ -29,7 +29,7 @@ function Element({ typeValue, id, setElements }) {
   return (
     <div className={classNames(
       `element ${type}`,
-      { 'element--image': type === 'image'},
+      { 'element--image': type === 'image' },
       { 'element--uploading': isUploading },
       { 'element--uploaded': isUploaded },
     )} tabIndex="0">

@@ -21,3 +21,5 @@ export const ElementType = {
   Text: 'text',
   Image: 'image',
 };
+
+export const KEY_ENTER_CODE = 'Enter';
