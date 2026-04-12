@@ -16,24 +16,22 @@ const INITIAL_UPLOADING_STATE = {
   isUploaded: false,
 };
 
-function Element({ typeValue, index, setElements }) {
+function Element({ typeValue, id, setElements }) {
   const [type, tagName] = typeValue.split(' ');
   const ElementComponent = elementMap[type];
-  const [uploadingState, setUploadingState] = useState(INITIAL_UPLOADING_STATE);
+  const [{isUploading, isUploaded}, setUploadingState] = useState(INITIAL_UPLOADING_STATE);
 
   const deleteButtonHandler = (evt) => {
     evt.preventDefault();
-
-    setElements((elements) =>
-      [...elements.slice(0, index), ...elements.slice(index + 1, elements.length)]);
+    setElements((elements) => elements.filter((element) => element.id !== id));
   };
 
   return (
     <div className={classNames(
       `element ${type}`,
       { 'element--image': type === 'image'},
-      { 'element--uploading': uploadingState.isUploading },
-      { 'element--uploaded': uploadingState.isUploaded },
+      { 'element--uploading': isUploading },
+      { 'element--uploaded': isUploaded },
     )} tabIndex="0">
       <ElementComponent
         tagName={tagName}

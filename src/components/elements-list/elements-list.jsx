@@ -2,11 +2,11 @@ import Element from '../element/element';
 
 function ElementsList({ elements, setElements }) {
   return (
-    elements.map((element, index) =>
+    elements.map((element) =>
       <Element
-        key={Math.random()}
-        index={index}
-        typeValue={element}
+        key={element.id}
+        id={element.id}
+        typeValue={element.type}
         setElements={setElements}
       />)
   );

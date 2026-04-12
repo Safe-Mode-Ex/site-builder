@@ -6,7 +6,7 @@ function ChoseElement({ setIsEditMode, setElements }) {
 
   const addElementHandler = (evt) => {
     evt.stopPropagation();
-    setElements((elements) => [...elements, evt.target.value]);
+    setElements((elements) => [...elements, { id: crypto.randomUUID(), type: evt.target.value }]);
   };
 
   return (
