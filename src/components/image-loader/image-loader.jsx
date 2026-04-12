@@ -1,22 +1,8 @@
-import { useRef } from 'react';
 import useOutsideClick from '../../hooks/use-outside-click/use-outside-click';
+import useImageLoader from '../../hooks/use-image-loader/use-image-loader';
 
 function ImageLoader({ setImageSrc, setUploadingState }) {
-  const imageSrcRef = useRef(null);
-
-  const clickLoadHandler = (evt) => {
-    const imageSrcValue = imageSrcRef.current.value.trim();
-
-    if (imageSrcValue) {
-      evt.preventDefault();
-
-      setImageSrc(imageSrcValue);
-      setUploadingState(({ isUploading, isUploaded }) => ({
-        isUploading: !isUploading,
-        isUploaded: !isUploaded,
-      }));
-    }
-  };
+  const [imageSrcRef, clickLoadHandler] = useImageLoader(setImageSrc, setUploadingState);
 
   const clickOutsideImageHandler = (isUploading) =>
     setUploadingState((state) => ({ ...state, isUploading }));
