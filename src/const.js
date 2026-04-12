@@ -15,3 +15,9 @@ export const ContentCount = {
   Blog: 2,
   Shop: 3,
 };
+
+export const ElementType = {
+  Title: 'title',
+  Text: 'text',
+  Image: 'image',
+};

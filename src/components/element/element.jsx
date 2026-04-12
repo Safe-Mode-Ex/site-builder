@@ -1,13 +1,14 @@
 import ElementTitle from '../element-title/element-title';
-import ElementImg from '../element-image/element-image';
+import ElementImage from '../element-image/element-image';
 import ElementText from '../element-text/element-text';
 import classNames from 'classnames';
 import { useState } from 'react';
+import { ElementType } from '../../const';
 
 const elementMap = {
-  title: ElementTitle,
-  text: ElementText,
-  image: ElementImg,
+  [ElementType.Title]: ElementTitle,
+  [ElementType.Text]: ElementText,
+  [ElementType.Image]: ElementImage,
 };
 
 const INITIAL_UPLOADING_STATE = {
