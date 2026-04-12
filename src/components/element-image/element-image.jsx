@@ -1,7 +1,17 @@
-function ElementImg() {
+import { useState } from 'react';
+import ImageLoader from '../image-loader/image-loader';
+
+function ElementImg({ setUploadingState }) {
+  const [imageSrc, setImageSrc] = useState(null);
+
+  const clickButtonHandler = (evt) => {
+    evt.stopPropagation();
+    setUploadingState((state) => ({ ...state, isUploading: !state.isUploading }));
+  };
+
   return (
     <>
-      <button type="button" className="add-img-btn">
+      <button type="button" className="add-img-btn" onClick={clickButtonHandler}>
         <svg
           width="32"
           height="32"
@@ -17,21 +27,9 @@ function ElementImg() {
         </svg>
       </button>
 
-      <div className="img-upload">
-        <p>Загрузите изображение</p>
-        <input
-          type="url"
-          placeholder="Вставьте ссылку на изображение"
-        />
-        <label className="img-upload__label"
-        >Загрузить
-          <input
-            className="visually-hidden"
-            type="file"
-            accept="image/png, image/jpeg"
-          />
-        </label>
-      </div>
+      {!imageSrc ?
+        <ImageLoader setImageSrc={setImageSrc} setUploadingState={setUploadingState} /> :
+        <img src={imageSrc} />}
     </>
   );
 }
