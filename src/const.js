@@ -23,3 +23,5 @@ export const ElementType = {
 };
 
 export const KEY_ENTER_CODE = 'Enter';
+export const MAX_UPLOAD_IMAGE_SIZE_MB = 5;
+export const BYTES_PER_UNIT = 1024;
