@@ -7,6 +7,10 @@ function ImageLoader({ setImageSrc, setUploadingState }) {
   const clickOutsideImageHandler = (isUploading) =>
     setUploadingState((state) => ({ ...state, isUploading }));
 
+  const loadImageHandler = (evt) => {
+    setImageSrc(URL.createObjectURL(evt.target.files[0]));
+  };
+
   const ref = useOutsideClick(clickOutsideImageHandler);
 
   return (
@@ -23,6 +27,7 @@ function ImageLoader({ setImageSrc, setUploadingState }) {
           className="visually-hidden"
           type="file"
           accept="image/png, image/jpeg"
+          onChange={loadImageHandler}
         />
       </label>
     </div>
